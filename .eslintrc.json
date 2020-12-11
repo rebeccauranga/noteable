@@ -1,0 +1,26 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "prettier/@typescript-eslint",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "react"],
+  "rules": {
+    "prettier/prettier": ["error", {}, { "singleQuote": false }],
+    "no-unused-vars": "off"
+  },
+  "ignorePatterns": ["webpack.config.js"]
+}
