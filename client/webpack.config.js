@@ -16,14 +16,6 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   entry: "./client/src/index.tsx",
-  devServer: {
-    contentBase: "./dist",
-    proxy: {
-      '/api': {
-          target: 'http://localhost:5000',
-      },
-    }
-  },
   module: {
     rules: [
       {
@@ -48,7 +40,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     publicPath: "/",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "public"),
   },
   plugins: [
     new HtmlWebPackPlugin({
@@ -56,4 +48,5 @@ module.exports = {
       filename: "./index.html",
     }),
   ],
+  // mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
 };
